@@ -1,7 +1,6 @@
 "use client";
 
 import IdCard from "@/components/card";
-import Form from "@/components/form";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -15,6 +14,9 @@ export default function GeneragePage() {
 
   useEffect(() => {
     setName(params.get("name") ?? "");
+    setQr(
+      `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${window.location.href}`
+    );
     setId(
       params.get("id") ??
         Math.floor(Math.random() * 999999999)
@@ -22,13 +24,6 @@ export default function GeneragePage() {
           .replaceAll(",", " ")
     );
   }, [params]);
-
-  useEffect(() => {
-    setQr(
-      `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=` +
-        `http://localhost:3000/generate?name=${name}`
-    );
-  }, [name]);
 
   return (
     <div className="flex justify-center  items-center flex-col w-full">
