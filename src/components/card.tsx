@@ -23,7 +23,7 @@ export default function IdCard() {
     );
   }, [params]);
   return (
-    <div className="w-full max-w-sm  flex flex-col  overflow-hidden border rounded-xl mx-auto mt-8">
+    <div className="w-full  flex flex-col  overflow-hidden border rounded-xl ">
       <div className="bg-red-700  flex items-center">
         <span className="text-4xl font-bold italic px-4 bg-gradient-to-r from-violet-400 to-stone-400 bg-clip-text text-transparent">
           N
@@ -43,7 +43,7 @@ export default function IdCard() {
           </p>
           <p>
             <span className="text-sm">
-              Expires: <span className="italic">You&aposll know when</span>
+              Expires: <span className="italic">You will know when</span>
             </span>
           </p>
           <br />
