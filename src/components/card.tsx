@@ -1,11 +1,27 @@
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
+import { useState, useEffect } from "react";
 
-type Props = {
-  name: string;
-  id: string;
-  qr: string;
-};
-export default function IdCard({ name, id, qr }: Props) {
+export default function IdCard() {
+  const [name, setName] = useState("");
+  const [id, setId] = useState("");
+  const [qr, setQr] = useState(
+    "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example"
+  );
+  const params = useSearchParams();
+
+  useEffect(() => {
+    setName(params.get("name") ?? "");
+    setQr(
+      `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${window.location.href}`
+    );
+    setId(
+      params.get("id") ??
+        Math.floor(Math.random() * 999999999)
+          .toLocaleString()
+          .replaceAll(",", " ")
+    );
+  }, [params]);
   return (
     <div className="w-full max-w-sm  flex flex-col  overflow-hidden border rounded-xl mx-auto mt-8">
       <div className="bg-red-700  flex items-center">
@@ -23,11 +39,11 @@ export default function IdCard({ name, id, qr }: Props) {
           </p>
           <p>
             <span className="text-sm">ID:</span>{" "}
-            {id.length > 0 ? id : "0000 000 000"}
+            {id.length > 0 ? id : "000 000 000"}
           </p>
           <p>
             <span className="text-sm">
-              Expires: <span className="italic">You'll know when</span>
+              Expires: <span className="italic">You&aposll know when</span>
             </span>
           </p>
           <br />
