@@ -25,9 +25,7 @@ export default function IdCard() {
   return (
     <div className="w-full  flex flex-col  overflow-hidden border rounded-xl bg-white">
       <div className="bg-red-700  flex items-center">
-        <span className="text-4xl font-bold italic px-4 bg-gradient-to-r from-violet-400 to-stone-400 bg-clip-text text-transparent">
-          N
-        </span>
+        <span className="text-5xl font-bold italic px-6 text-white">N</span>
         <span className="py-6  font-bold text-xl text-white">Word Pass</span>
       </div>
 
