@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="mx-auto h-full flex flex-col items-center  ">
+    <main className="mx-auto h-full flex flex-col items-center  p-4 text-center sm:text-start">
       <div className="w-full max-w-md flex flex-col gap-4 mt-4 items-center">
         <p className="text-4xl font-bold bg-gradient-to-r from-blue-700 to-red-700 bg-clip-text  text-transparent">
           Do you have a friend that looks like this?

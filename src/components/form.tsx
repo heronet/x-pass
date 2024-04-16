@@ -23,7 +23,7 @@ export default function Form() {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <Button className="max-w-fit" type="submit">
+        <Button className="sm:max-w-fit" type="submit">
           Create Now
         </Button>
       </form>
